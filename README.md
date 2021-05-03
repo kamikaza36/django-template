@@ -1,18 +1,30 @@
 # django-template
 Django template
 
-Starting commands
+Starting commands for local dev
+
+pipenv install
 
 pipenv shell
-
-pipenv install django djangorestframework django-rest-auth django-allauth django-cors-headers
-
-django-admin startproject mysite .
-
-python manage.py startapp users
 
 python manage.py makemigrations
 
 python manage.py migrate
 
 python manage.py createsuperuser
+
+python manage.py runserver
+
+## Starting commands for production
+
+pip install -r requirements.txt
+
+Make sure server ip is in allowed hosts in settings.py
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+nohup python manage.py runserver
