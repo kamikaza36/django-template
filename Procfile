@@ -1,1 +1,1 @@
-web: gunicorn django-time-scheduler.wsgi
+web: gunicorn mysite.wsgi
