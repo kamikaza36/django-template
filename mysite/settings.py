@@ -26,12 +26,13 @@ SECRET_KEY = 'django-insecure-(mq%b^7o^d83r3v%7^r(mk(320yvc$v*@6&--k-fa!f@r($qm1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://localhost:3000', '127.0.0.1']
+ALLOWED_HOSTS = ['http://localhost:3000', '127.0.0.1', 'https://time-scheduler-v1.herokuapp.com']
 
 # Specifies localhost port 3000 where the React
 # server will be running is safe to receive requests from
 CORS_ALLOWED_ORIGINS = [    
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'https://time-scheduler-v1.herokuapp.com'
 ]
 
 
