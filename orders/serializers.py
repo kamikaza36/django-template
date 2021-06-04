@@ -17,8 +17,8 @@ class ClientSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class OrderSerializer(serializers.ModelSerializer):
-    order_start_date = fields.DateTimeField(input_formats=['%Y-%m-%dT%H:%M:%S'])
-    order_end_date = fields.DateTimeField(input_formats=['%Y-%m-%dT%H:%M:%S'])
+    order_start_date = serializers.DateTimeField(input_formats=['%Y-%m-%dT%H:%M:%S'])
+    order_end_date = serializers.DateTimeField(input_formats=['%Y-%m-%dT%H:%M:%S'])
 
     machine = MachineSerializer()
     client = ClientSerializer()

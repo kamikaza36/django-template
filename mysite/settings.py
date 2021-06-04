@@ -168,7 +168,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 # Rest Framework config
 REST_FRAMEWORK = {    
-    'DATETIME_FORMAT': "%m/%d/%Y %I:%M%P",
+    'DATETIME_FORMAT': "%Y-%m-%dT%H:%M:%S",
     'DEFAULT_AUTHENTICATION_CLASSES': [ 
         'rest_framework.authentication.TokenAuthentication',    
     ],
