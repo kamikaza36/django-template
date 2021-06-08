@@ -20,8 +20,23 @@ class OrderSerializer(serializers.ModelSerializer):
     order_start_date = serializers.DateTimeField(input_formats=['%Y-%m-%dT%H:%M:%S'])
     order_end_date = serializers.DateTimeField(input_formats=['%Y-%m-%dT%H:%M:%S'])
 
+    client_id = serializers.IntegerField()
+    machine_id = serializers.IntegerField()
+
     machine = MachineSerializer()
     client = ClientSerializer()
     class Meta:
         model = Order
         fields = '__all__'
+
+    def create(self, validated_data):
+        machine_data = validated_data.pop('machine')
+        client_data = validated_data.pop('client')
+        print(type(validated_data))
+        if machine_data:
+            Machine.objects.create(**machine_data)
+        if client_data:
+         Client.objects.create(**client_data)
+        order = Order.objects.create(**validated_data)
+        return order
+
